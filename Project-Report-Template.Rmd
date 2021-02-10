@@ -19,6 +19,9 @@ keywords: "opioids, education, income, spatial analysis"
 date: "4/6/2020"
 output:
   pdf_document:
+    # The project-template-default.tex file was minimally adapted from Steven V. Miller's template for academic manuscripts. See:
+    # http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/
+    # https://github.com/svmiller/svm-r-markdown-templates/blob/master/svm-latex-ms.tex
     template: project-template-default.tex
 bibliography: [bibliography.bib, packages.bib]
 always_allow_html: true
@@ -29,16 +32,15 @@ always_allow_html: true
 # install.packages("arcos") # Install if needed, but this needs to be done only once
 library(arcos) # the `arcos` allows us to download Prescription data prepared by the Washington Post
 library(cartogram) # Package to create cartograms
-library(crosstalk)
+#library(crosstalk)
 library(readxl) # package to read external data, like csv and text files
 library(sf) # package for working with geospatial data in simple features format
 library(sp) # package for working with spatial data, including utilities to create spatial weights matrices, etc.
 library(spdep) # package for spatial regression analysis
-library(spgwr) # package for estimating gwr models
-library(tidyverse) # packages for data manipulation, analysis, and visualization (includes `ggplot2`)
+library(stargazer) # package for creating tables with output of models 
+library(tidyverse) # family of packages for data manipulation, analysis, and visualization (includes `ggplot2`)
 library(tigris) # package `tigris` which includes boundary and other geography files for the US:
 library(plotly) # package for interactive plotting
-# install.packages("viridis")
 library(viridis) #Viridis colour scheme for mapping
 ```
 
@@ -445,10 +447,15 @@ To determine relationships between opioid use and the chosen variables, they mus
 
 \newpage
 
-Model income and opioid usage in Kentucky:
-```{r model-income, echo=FALSE}
-model1 <- lm(formula = per_person ~ income, data = KY_AVG_Per)
-summary (model1)
+```{r model-income, echo=FALSE, message=FALSE, results="asis"}
+# Use `lm()` to estimate a linear regression model
+model1 <- lm(formula = per_person ~ income, 
+             data = KY_AVG_Per)
+
+# Use stargazer to print table with results of model
+stargazer(model1,
+          header = FALSE,
+          title = "Mean annual opioid pills per person regressed on mean household income")
 ```
 
 ```{r plot-model-income, echo = FALSE, fig.cap={"\\label{fig:model-income}Regression analysis of income and mean annual opioid pills per person"}}
@@ -464,12 +471,17 @@ ggplot(data = KY_AVG_Per,
 
 \newpage
 
-Model educational attainment and opioid usage in Kentucky
-```{r model-education, echo=FALSE}
+```{r model-education, echo=FALSE, message=FALSE, results="asis"}
+# Use `lm()` to estimate a linear regression model
 model2 <- lm(formula = per_person ~ HSDeg,
              data = KY_AVG_Per)
-summary (model2)
+
+# Use stargazer to print table with results of model
+stargazer(model2,
+          header = FALSE,
+          title = "Mean annual opioid pills per person regressed on proportion of population with high school degree or higher")
 ```
+
 ```{r plot-model-education, echo=FALSE, fig.cap={"\\label{fig:model-education}Regression analysis of educational attainement and mean annual opioid pills per person"}}
 ggplot(data = KY_AVG_Per, 
        aes(x = HSDeg, 
@@ -480,6 +492,8 @@ ggplot(data = KY_AVG_Per,
   xlab("% population highschool or above") +
   ylab("Pills per person") 
 ```
+
+\newpage
 
 These figures have been created to visualize and to show trends that might not be seen otherwise. General maps, choropleth maps, scatterplots and regression analyses were conducted to understand and find relationships between the use of opioids and income and/or education levels.
 
