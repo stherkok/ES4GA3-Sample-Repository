@@ -32,7 +32,6 @@ always_allow_html: true
 # install.packages("arcos") # Install if needed, but this needs to be done only once
 library(arcos) # the `arcos` allows us to download Prescription data prepared by the Washington Post
 library(cartogram) # Package to create cartograms
-#library(crosstalk)
 library(readxl) # package to read external data, like csv and text files
 library(sf) # package for working with geospatial data in simple features format
 library(sp) # package for working with spatial data, including utilities to create spatial weights matrices, etc.
