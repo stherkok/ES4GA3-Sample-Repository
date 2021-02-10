@@ -75,7 +75,7 @@ The `bibliography.bib` file is where you save your references. You can obtain re
 
 ![Get citation](_figures/Figure-4-getting-citation.png)
 
-![Get citation in bibtex format](_figures/Figure-4-bibtex-citation.png)
+![Get citation in bibtex format](_figures/Figure-5-bibtex-citation.png)
 
 Simply copy and paste the citation in bibtex format to your `bibliography.bib` file, and you are ready to cite it in your R markdown document. See the examples there.
 
