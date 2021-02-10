@@ -79,4 +79,24 @@ The `bibliography.bib` file is where you save your references. You can obtain re
 
 Simply copy and paste the citation in bibtex format to your `bibliography.bib` file, and you are ready to cite it in your R markdown document. See the examples there.
 
-The final report in the example by Akhtar, Kalinina, Morrone, Walters, and Wu earned a 91/100, and would have been a 100/100 if they had done a spatial analysis of the residuals of their model, with a discussion and any corrective measures neeeded.
+## Rubric for final report
+
+This is the rubric for the final report:
+
+Rubric for grading projects.
+
+**10% Introduction** – Make sure that there is a clear and concise research question. The introduction is engaging, states the main topic and previews the structure of the paper.
+
+**20% Background** – Literature review is relevant, up to date, and complete. The background provides a conceptual or theoretical framework to support the analysis in the paper.
+
+**20% Data and Methods** – The methods are correctly described. Sources of data are properly documented. The format in which the data are used is clearly and precisely described.
+
+**20% Analysis** – Descriptive statistics of the dataset are present. All parts of the analysis are relevant to the research question, and their use is justified. There is no redundancy in presentation. All methods are correctly applied.
+
+**15% Conclusions and Recommendations**** – The conclusion speaks directly to the research question, and is supported by the analysis.
+
+**10% Presentation** – Presentation is professional, with a title page, title, appropriate use of headings and subheadings, and a formatted list of references.
+
+**5% Extra mile** – Correct application of a method or tool not covered in the course.
+
+The final report in the example by Akhtar, Kalinina, Morrone, Walters, and Wu earned a 91/100. In this report, the students identified an interesting data set (the Washington Post opioids database), learned the tools to work with it, and presented an interesting analysis complemented with data from the census. The project had a clear research question (the potential statistical relationship between opioid prescriptions and various indicators of socio-economic deprivation); various methods from the course were used, the discussion was on point, and the presentation professional. The final grade of the project would have been a 100/100 if the residuals had been analyzed for spatial autocorrelation, and the results of this analysis had been discussed (and any issues had been corrected).
