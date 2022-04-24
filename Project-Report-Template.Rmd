@@ -29,7 +29,7 @@ always_allow_html: true
 
 <!--Chunks of code can have names; the chunk option "include" controls whether the chunk and its output are printed in the final document-->
 ```{r load-packages, include=FALSE}
-# install.packages("arcos") # Install if needed, but this needs to be done only once
+# devtools::install_github('wpinvestigative/arcos') # Install if needed, but this needs to be done only once
 library(arcos) # the `arcos` allows us to download Prescription data prepared by the Washington Post
 library(cartogram) # Package to create cartograms
 library(readxl) # package to read external data, like csv and text files
